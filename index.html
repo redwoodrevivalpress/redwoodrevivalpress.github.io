@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redwood Revival Press</title>
+<meta name="description" content="Redwood Revival Press specializes in cover-to-cover restoration and modern adaptation of classic and forgotten books.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+
+<link rel="canonical" href="https://redwoodrevivalpress.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Redwood Revival Press">
+<meta property="og:title" content="Redwood Revival Press">
+<meta property="og:description" content="Cover-to-cover restoration and modern adaptation of classic and forgotten books.">
+<meta property="og:url" content="https://redwoodrevivalpress.com/">
+<meta property="og:image" content="https://redwoodrevivalpress.com/covers/rhetoric-paperback.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Redwood Revival Press">
+<meta name="twitter:description" content="Cover-to-cover restoration and modern adaptation of classic and forgotten books.">
+<meta name="twitter:image" content="https://redwoodrevivalpress.com/covers/rhetoric-paperback.jpg">
+
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/logo-dark.png">
+
+<style>
+  :root {
+    /* warm bone background; not yellow-beige */
+    --bg:           #F2EDE1;
+    --bg-deep:      #E8DFCB;
+    --ink:          #14110D;
+    --ink-soft:     #4D4538;
+    --ink-faint:    #847962;
+    --rule:         #2B2418;
+
+    /* deeply saturated press palette */
+    --redwood:      #7A2317;
+    --redwood-dark: #54180F;
+    --moss:         #2F4A38;
+    --gold:         #B07D2A;
+    --indigo:       #283358;
+    --bone:         #EAE0CB;
+    --cream:        #F8F3E6;
+
+    --display:      'Fraunces', 'Newsreader', Georgia, serif;
+    --body:         'Newsreader', Georgia, serif;
+    --sans:         'Fraunces', 'Newsreader', Georgia, serif;
+    --mono:         ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--body);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 1.13rem;
+    line-height: 1.6;
+    font-feature-settings: 'kern', 'liga', 'onum';
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+
+  /* ─── Top bar ─── */
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .topbar-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 12px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .topbar-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+  }
+  .topbar-inner .colophon { display: flex; gap: 22px; }
+  .topbar-inner a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.15s;
+  }
+  .topbar-inner a:hover { color: var(--redwood); }
+
+  /* ─── Hero ─── */
+  header.hero {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 88px 0 96px;
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::before {
+    /* decorative redwood band */
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg,
+      var(--redwood) 0 25%,
+      var(--moss) 25% 50%,
+      var(--gold) 50% 75%,
+      var(--indigo) 75% 100%);
+  }
+  header.hero::after {
+    /* faint vertical stripe at right */
+    content: "EST · MMXXVI";
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    transform: rotate(90deg) translateX(-50%);
+    transform-origin: top right;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 36px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(28px, 4vw, 56px);
+    row-gap: clamp(36px, 4.5vw, 60px);
+    align-items: center;
+  }
+  .hero-logo {
+    grid-column: 1;
+    grid-row: 1;
+    width: clamp(120px, 16vw, 220px);
+    height: auto;
+    display: block;
+    opacity: 0.96;
+  }
+  .hero-brand-text {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .hero-deck {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 720px;
+  }
+  @media (max-width: 720px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-logo, .hero-brand-text, .hero-deck {
+      grid-column: 1;
+    }
+    .hero-logo { grid-row: 1; }
+    .hero-brand-text { grid-row: 2; }
+    .hero-deck { grid-row: 3; }
+  }
+  .hero-mark {
+    font-family: var(--display);
+    font-variation-settings: 'opsz' 144, 'wght' 320;
+    font-size: clamp(3.2rem, 8.2vw, 7.6rem);
+    line-height: 0.94;
+    letter-spacing: -0.025em;
+    margin: 0;
+    color: var(--cream);
+    white-space: nowrap;
+  }
+  .hero-mark .press {
+    display: block;
+    font-style: normal;
+    font-variation-settings: 'opsz' 144, 'wght' 320;
+    color: var(--cream);
+    letter-spacing: -0.025em;
+    margin-top: -0.08em;
+  }
+  .hero-rule {
+    width: 64px;
+    height: 2px;
+    background: var(--gold);
+    margin: 26px 0 22px;
+  }
+  .hero-tagline {
+    font-family: var(--display);
+    font-variation-settings: 'opsz' 60, 'wght' 350;
+    font-style: italic;
+    font-size: clamp(1.15rem, 1.8vw, 1.42rem);
+    line-height: 1.42;
+    color: var(--cream);
+    opacity: 0.86;
+    max-width: 520px;
+    margin: 0;
+  }
+  .hero-tagline strong {
+    color: var(--gold);
+    font-weight: 400;
+    font-style: italic;
+  }
+  .hero-sig {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+    margin: 28px 0 0;
+  }
+  @media (max-width: 480px) {
+    .topbar-inner { padding: 10px 18px; gap: 12px; }
+    .topbar-inner .colophon { flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; }
+    .sec-bar { flex-wrap: wrap; gap: 12px 20px; }
+  }
+  @media (max-width: 360px) {
+    .hero-mark { white-space: normal; }
+  }
+  @media (max-width: 880px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 36px; align-items: start; }
+    header.hero { padding: 68px 0 72px; }
+    header.hero::after { display: none; }
+  }
+
+  /* ─── Container ─── */
+  main {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 96px 36px 64px;
+  }
+  @media (max-width: 720px) {
+    main { padding: 64px 22px 48px; }
+  }
+
+  /* ─── Section title bars ─── */
+  .sec-bar {
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 18px;
+  }
+  .sec-num {
+    font-family: var(--display);
+    font-variation-settings: 'opsz' 144, 'wght' 600;
+    font-style: italic;
+    font-size: 2.6rem;
+    color: var(--redwood);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .sec-title {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+    flex: 1;
+  }
+  .sec-count {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── Publications grid ─── */
+  /* auto-fit means columns expand to fill until they hit the min size,
+     then break to a new row — avoids the cramped 2-up state at mid widths */
+  .pubs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(560px, 100%), 1fr));
+    gap: 4px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 0 0 80px;
+  }
+
+  .pub {
+    background: var(--bg);
+    padding: 44px 40px 40px;
+    display: grid;
+    grid-template-columns: clamp(170px, 20vw, 220px) minmax(0, 1fr);
+    gap: clamp(28px, 3.5vw, 44px);
+    position: relative;
+    transition: background 0.2s;
+    align-items: start;
+  }
+  .pub:hover { background: var(--bg-deep); }
+
+  /* cover slot — holds the image (and shrinks to its natural shape) */
+  .cover-slot {
+    display: block;
+    width: 100%;
+    line-height: 0;
+  }
+
+  /* actual book cover — natural aspect, no cropping */
+  .cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.10),
+      6px 8px 18px rgba(0,0,0,0.18),
+      0 0 0 1px rgba(0,0,0,0.06);
+    background: var(--bg-deep);
+    transition: transform 0.25s ease;
+  }
+  .pub:hover .cover { transform: translateY(-4px); }
+
+  /* typographic placeholder (in-flight, no cover yet) */
+  .placeholder {
+    aspect-ratio: 2 / 3;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 26px 22px 22px;
+    color: var(--cream);
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.10),
+      6px 8px 18px rgba(0,0,0,0.18);
+    font-family: var(--display);
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+  }
+  .pub:hover .placeholder { transform: translateY(-4px); }
+  .placeholder::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0;
+    width: 6px;
+    background: rgba(0,0,0,0.22);
+  }
+  .placeholder-mark {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    opacity: 0.75;
+    text-transform: uppercase;
+  }
+  .placeholder-title {
+    font-family: var(--display);
+    font-variation-settings: 'opsz' 60, 'wght' 380;
+    font-size: 1.15rem;
+    line-height: 1.18;
+    letter-spacing: -0.005em;
+    margin: 0;
+  }
+  .placeholder-title em { font-style: italic; }
+  .placeholder-year {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  /* per-pub placeholder colors */
+  .placeholder.moss    { background: var(--moss); }
+  .placeholder.indigo  { background: var(--indigo); }
+
+  .pub-body { min-width: 0; }
+  .pub-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .pub-status {
+    padding: 4px 9px 3px;
+    border-radius: 2px;
+    line-height: 1;
+  }
+  .pub-status.published {
+    background: var(--moss);
+    color: var(--cream);
+  }
+  .pub-status.in-flight {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+  }
+  .pub-format {
+    color: var(--ink-faint);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+  }
+  .pub-title {
+    font-family: var(--display);
+    font-variation-settings: 'opsz' 60, 'wght' 380;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    line-height: 1.14;
+    color: var(--ink);
+    text-decoration: none;
+    display: block;
+    margin: 0 0 6px;
+    letter-spacing: -0.008em;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .pub-title em {
+    font-style: italic;
+  }
+  a.pub-title { transition: color 0.15s; }
+  a.pub-title:hover { color: var(--redwood); }
+  .pub-author {
+    font-family: var(--display);
+    font-style: italic;
+    font-variation-settings: 'opsz' 24, 'wght' 380;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .pub-blurb {
+    font-family: var(--body);
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 18px;
+    max-width: 540px;
+  }
+  .pub-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .pub-link {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .pub-link:hover {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .pub-link.format-web,
+  .pub-link.format-paperback,
+  .pub-link.format-kindle,
+  .pub-link.format-hardback {
+    background: var(--format-bg);
+    color: var(--cream);
+    border-color: var(--format-bg);
+  }
+  .pub-link.format-web:hover,
+  .pub-link.format-paperback:hover,
+  .pub-link.format-kindle:hover,
+  .pub-link.format-hardback:hover {
+    background: var(--format-hover);
+    border-color: var(--format-hover);
+  }
+  .pub-link.format-web {
+    --format-bg: var(--gold);
+    --format-hover: #8A5D18;
+    color: var(--ink);
+  }
+  .pub-link.format-web:hover {
+    color: var(--cream);
+  }
+  .pub-link.format-paperback {
+    --format-bg: var(--redwood);
+    --format-hover: var(--redwood-dark);
+  }
+  .pub-link.format-kindle {
+    --format-bg: var(--indigo);
+    --format-hover: #1E2746;
+  }
+  .pub-link.format-hardback {
+    --format-bg: var(--moss);
+    --format-hover: #253B2D;
+  }
+
+  @media (max-width: 720px) {
+    .pub {
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 24px;
+      padding: 30px 24px;
+    }
+    .pub-title { font-size: 1.3rem; }
+  }
+  @media (max-width: 480px) {
+    .pub {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 22px;
+    }
+    .cover-slot, .placeholder { max-width: 200px; }
+  }
+
+  /* ─── Footer ─── */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 56px 0 48px;
+    margin-top: 32px;
+  }
+  .footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 36px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 56px;
+  }
+  .footer-logo {
+    width: 56px;
+    height: auto;
+    display: block;
+    margin: 0 0 18px;
+    opacity: 0.92;
+  }
+  .footer-mark {
+    font-family: var(--display);
+    font-variation-settings: 'opsz' 96, 'wght' 380;
+    font-size: 1.7rem;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+  }
+  .footer-mark .press { color: var(--cream); font-style: normal; font-weight: 380; }
+  .footer-tagline {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cream);
+    opacity: 0.7;
+    margin: 0;
+    max-width: 360px;
+    line-height: 1.5;
+  }
+  .footer-label {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+  .footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--body);
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: var(--cream);
+    opacity: 0.86;
+  }
+  .footer-list a {
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-list a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1240px;
+    margin: 56px auto 0;
+    padding: 24px 36px 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+    opacity: 0.55;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  @media (max-width: 720px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-brand" href="/">
+      <img class="topbar-logo" src="./assets/logo-dark.png" alt="" width="28" height="28">
+      <span>Redwood Revival Press</span>
+    </a>
+    <nav class="colophon" aria-label="Main navigation">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#about">About</a>
+      <a href="mailto:cyrus@redwoodrevivalpress.com">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="about">
+  <div class="hero-inner">
+    <img class="hero-logo" src="./assets/logo-light.png" alt="Redwood Revival Press emblem" width="220" height="234">
+    <div class="hero-brand-text">
+      <h1 class="hero-mark">
+        Redwood&nbsp;Revival
+        <span class="press">Press.</span>
+      </h1>
+      <p class="hero-sig">A small independent publisher · Berkeley, California</p>
+    </div>
+    <div class="hero-deck">
+      <div class="hero-rule"></div>
+      <p class="hero-tagline">
+        We specialize in <strong>cover-to-cover restoration</strong> and <strong>modern adaptation</strong> of classic and forgotten books.
+      </p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="sec-bar" id="catalogue">
+    <div class="sec-num">№.01</div>
+    <h2 class="sec-title">Catalogue</h2>
+    <div class="sec-count">05 titles</div>
+  </div>
+
+  <div class="pubs">
+
+    <article class="pub">
+      <a class="cover-slot" href="https://www.amazon.com/dp/B0H2H8THFV" target="_blank" rel="noopener" aria-label="Aristotle's Rhetoric — paperback">
+        <img class="cover" src="./covers/rhetoric-paperback.jpg" alt="Rhetoric cover" loading="lazy" width="334" height="500">
+      </a>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="pub-status published">Published</span>
+          <span class="pub-format">Paperback &middot; Kindle</span>
+        </div>
+        <a class="pub-title" href="https://www.amazon.com/dp/B0H2H8THFV" target="_blank" rel="noopener">Rhetoric: <em>a faithful adaptation for the modern reader</em></a>
+        <div class="pub-author"><em>Aristotle</em></div>
+        <p class="pub-blurb">A faithful and approachable adaptation of Aristotle’s <em>Rhetoric</em>. Drastically more readable for the modern reader than the 1926 Freese translation, and often closer in meaning to the Greek original. Use the Translation Explorer to compare the Greek source, final literal translation, modernized adaptation, and Freese passage by passage.</p>
+        <div class="pub-actions">
+          <a class="pub-link format-web" href="./rhetoric/overview/">Book Overview</a>
+          <a class="pub-link format-web" href="./rhetoric/">Translation Explorer</a>
+          <a class="pub-link format-paperback" href="https://www.amazon.com/dp/B0H2H8THFV" target="_blank" rel="noopener">Paperback</a>
+          <a class="pub-link format-kindle" href="https://www.amazon.com/dp/B0GXLGN2VP" target="_blank" rel="noopener">Kindle</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="cover-slot" href="https://www.amazon.com/San-Francisco-Thereabout-Charles-Keeler/dp/B0GZHT8DC8/" target="_blank" rel="noopener" aria-label="San Francisco and Thereabout — paperback">
+        <img class="cover" src="./covers/sf-paperback.jpg" alt="San Francisco and Thereabout cover" loading="lazy" width="313" height="500">
+      </a>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="pub-status published">Published</span>
+          <span class="pub-format">Paperback &middot; Kindle</span>
+        </div>
+        <a class="pub-title" href="https://www.amazon.com/San-Francisco-Thereabout-Charles-Keeler/dp/B0GZHT8DC8/" target="_blank" rel="noopener"><em>San Francisco</em> and Thereabout</a>
+        <div class="pub-author">Charles Keeler</div>
+        <p class="pub-blurb">Charles Keeler's portrait of San Francisco, published four years before the 1906 earthquake destroyed most of what he describes. Spanish padres and Gold Rush argonauts through the Barbary Coast, Chinatown, and the Golden Gate. A city captured just before it vanished.</p>
+        <div class="pub-actions">
+          <a class="pub-link format-paperback" href="https://www.amazon.com/San-Francisco-Thereabout-Charles-Keeler/dp/B0GZHT8DC8/" target="_blank" rel="noopener">Paperback</a>
+          <a class="pub-link format-kindle" href="https://www.amazon.com/San-Francisco-Thereabout-Charles-Keeler-ebook/dp/B0GZGQ2B22/" target="_blank" rel="noopener">Kindle</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a href="./coffee/" aria-label="History of Coffee — dispatch">
+        <div class="placeholder indigo">
+          <span class="placeholder-mark">RRP · 003 · in flight</span>
+          <p class="placeholder-title">History of <em>Coffee.</em></p>
+          <span class="placeholder-year">MMXXVI</span>
+        </div>
+      </a>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="pub-status in-flight">In flight</span>
+          <span class="pub-format">Online dispatch</span>
+        </div>
+        <a class="pub-title" href="./coffee/">History of <em>Coffee.</em></a>
+        <div class="pub-author">an original long-form companion</div>
+        <p class="pub-blurb">A field companion to the ancient relationship between humans and the world's most popular beverage. From the 15th-century written record to the 12,000-year-old domestication signature in the genome.</p>
+        <div class="pub-actions">
+          <a class="pub-link format-web" href="./coffee/">Read the dispatch</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a href="./leviathan/" aria-label="Leviathan — passage explorer">
+        <div class="placeholder moss">
+          <span class="placeholder-mark">RRP · 005 · in flight</span>
+          <p class="placeholder-title">Hobbes’s <em>Leviathan.</em></p>
+          <span class="placeholder-year">MMXXVI</span>
+        </div>
+      </a>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="pub-status in-flight">In flight</span>
+          <span class="pub-format">Online explorer</span>
+        </div>
+        <a class="pub-title" href="./leviathan/">Leviathan: <em>a modernization and abridgment</em></a>
+        <div class="pub-author">Thomas Hobbes</div>
+        <p class="pub-blurb">Follow the text from Hobbes’s 1651 original through the complete modernization to the abridged edition. Every retained sentence, shortened passage, summary, and editorial bridge is exposed, passage by passage.</p>
+        <div class="pub-actions">
+          <a class="pub-link format-web" href="./leviathan/">Passage Explorer</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="cover-slot" href="https://www.amazon.com/World-My-Parish-Autobiographical-Odyssey/dp/B0DRFSBMRZ/" target="_blank" rel="noopener" aria-label="The World Is My Parish — paperback">
+        <img class="cover" src="./covers/parish-paperback.jpg" alt="The World Is My Parish cover" loading="lazy" width="334" height="500">
+      </a>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="pub-status published">Published</span>
+          <span class="pub-format">Paperback &middot; Hardcover &middot; Kindle</span>
+        </div>
+        <a class="pub-title" href="https://www.amazon.com/World-My-Parish-Autobiographical-Odyssey/dp/B0DRFSBMRZ/" target="_blank" rel="noopener">The World Is My Parish: <em>An Autobiographical Odyssey</em></a>
+        <div class="pub-author">Loyal Lincoln Wirt, D.D.</div>
+        <p class="pub-blurb">A pioneer minister's first-person record of eighty years and four continents. From the American West and the Alaska gold rush to Australia, England, India, Turkey, and Siam, with two world wars in between.</p>
+        <div class="pub-actions">
+          <a class="pub-link format-paperback" href="https://www.amazon.com/World-My-Parish-Autobiographical-Odyssey/dp/B0DRFSBMRZ/" target="_blank" rel="noopener">Paperback</a>
+          <a class="pub-link format-hardback" href="https://www.amazon.com/World-My-Parish-Autobiographical-Odyssey/dp/B0DLKP9MS3/" target="_blank" rel="noopener">Hardcover</a>
+          <a class="pub-link format-kindle" href="https://www.amazon.com/World-My-Parish-Autobiographical-Odyssey-ebook/dp/B0DK41PVLG/" target="_blank" rel="noopener">Kindle</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img class="footer-logo" src="./assets/logo-light.png" alt="" width="56" height="60">
+      <h3 class="footer-mark">Redwood <span class="press">Revival Press.</span></h3>
+      <p class="footer-tagline">Cover-to-cover restoration and modern adaptation of classic and forgotten books.</p>
+    </div>
+    <div>
+      <h4 class="footer-label">Catalogue</h4>
+      <ul class="footer-list">
+        <li><a href="https://www.amazon.com/dp/B0H2H8THFV" target="_blank" rel="noopener">Aristotle's Rhetoric</a></li>
+        <li><a href="https://www.amazon.com/San-Francisco-Thereabout-Charles-Keeler/dp/B0GZHT8DC8/" target="_blank" rel="noopener">San Francisco and Thereabout</a></li>
+        <li><a href="./coffee/">History of Coffee</a></li>
+        <li><a href="./leviathan/">Leviathan</a></li>
+        <li><a href="https://www.amazon.com/World-My-Parish-Autobiographical-Odyssey/dp/B0DRFSBMRZ/" target="_blank" rel="noopener">The World Is My Parish</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-label">Press</h4>
+      <ul class="footer-list">
+        <li><a href="mailto:cyrus@redwoodrevivalpress.com">cyrus@redwoodrevivalpress.com</a></li>
+        <li><a href="#about">About the imprint</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Redwood Revival Press</span>
+    <span>Established MMXXVI · Berkeley, California</span>
+  </div>
+</footer>
+
+</body>
+</html>
